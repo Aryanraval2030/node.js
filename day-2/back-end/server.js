@@ -51,7 +51,7 @@ app.get("/user", async (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
-app.get("/delete-all", async (req, res) => {
-  await User.deleteMany({});
-  res.send("All data deleted");
-});
+// app.get("/delete-all", async (req, res) => {
+//   await User.deleteMany({});
+//   res.send("All data deleted");
+// });
