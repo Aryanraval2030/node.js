@@ -1,0 +1,23 @@
+backend/
+│
+├── config/
+│     └── db.js
+│
+├── models/
+│     └── productModel.js
+│
+├── controllers/
+│     └── productController.js
+│
+├── routes/
+│     └── productRoutes.js
+│
+├── middleware/
+│     └── authMiddleware.js
+│
+├── data/
+│     └── products.js   (optional - seed data)
+│
+├── .env
+├── server.js
+└── package.json
