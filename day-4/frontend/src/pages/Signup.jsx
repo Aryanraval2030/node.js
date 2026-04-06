@@ -26,62 +26,79 @@ function Signup() {
       body: JSON.stringify(users),
     });
 
-    const data  = await res.text()
-    if(data.includes("User saved successfully")){
-      alert("user saved successfully")
-    }
+    const data = await res.json();
+   if (data.errors) {
+    const messages = data.errors.map((err) => err.msg).join("\n");
+    alert(messages);
+    return;
+  }
+
+  // ✅ success
+  if (data.includes?.("User saved successfully")) {
+    alert("user saved successfully");
+  }
   };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-[350px]">
-        <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 to-blue-300">
+      <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-2xl w-[360px] border border-white/30">
+        
+        <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">
+          Create Account 🚀
+        </h2>
+        <p className="text-sm text-center text-gray-500 mb-6">
+          Join us and start your journey
+        </p>
 
         <form
           onSubmit={handleSubmit}
           autoComplete="off"
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-5"
         >
           <input
             type="text"
-            placeholder="Name"
+            placeholder="Enter your name"
             name="name"
             autoComplete="name"
             value={users.name}
             onChange={handleChange}
-            className="border p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-purple-400 transition"
           />
 
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
             name="email"
             autoComplete="email"
             value={users.email}
             onChange={handleChange}
-            className="border p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-purple-400 transition"
           />
 
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Create a password"
             name="password"
             autoComplete="new-password"
             value={users.password}
             onChange={handleChange}
-            className="border p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-purple-400 transition"
           />
 
-          <button className="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
-            Sign Up
+          <button className="bg-purple-500 text-white py-3 rounded-xl font-semibold hover:bg-purple-600 active:scale-95 transition duration-200 shadow-md">
+            Sign Up ✨
           </button>
         </form>
 
-        <p className="text-sm text-center mt-4">
+        <p className="text-sm text-center mt-6 text-gray-600">
           Already have an account?{" "}
-          <span className="text-blue-500 cursor-pointer">Login</span>
+          <span className="text-purple-600 font-semibold cursor-pointer hover:underline">
+            Login
+          </span>
         </p>
       </div>
     </div>
   );
 }
+
 export default Signup;

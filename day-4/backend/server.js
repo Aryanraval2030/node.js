@@ -1,12 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import { body, validationResult } from "express-validator";
 
 const app = express();
 
-app.use(express.json()); //
+app.use(express.json());
 app.use(cors());
-
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -14,29 +14,72 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
-
-
 // for sign in user
 
-app.post("/signup", async (req, res) => {
-  try {
-    const { name, email, password } = req.body;
+// app.post(
+//   "/signup",
+//   [
+//     body("name").notEmpty().withMessage("name is not found"),
+//     body("email").isEmail().withMessage("email is not found"),
+//     body("password")
+//       .isLength({ min: 5 })
+//       .withMessage("password must be at least 5 characters"),
+//   ],
+//   async (req, res) => {
+//     try {
+//       const { name, email, password } = req.body;
+//       const err = validationResult(req);
 
-    const newUser = new User({
-      name,
-      email,
-      password,
-    });
+//       if (!err.isEmpty()) {
+//         return res.json({ errors: err.array() });
+//       }
 
-    await newUser.save();
+//       const newUser = new User({
+//         name,
+//         email,
+//         password,
+//       });
 
-    res.send("User saved successfully");
-  } catch (error) {
-    res.send("Error: " + error.message);
-  }
-});
- 
+//       await newUser.save();
+//       res.send("User saved successfully");
+//     } catch (error) {
+//       res.send("Error: " + error.message);
+//     }
+//   },
+// );
+app.post(
+  "/signup",
+  [
+    body("name").notEmpty().withMessage("name is required"),
+    body("email").isEmail().withMessage("email is not valid"),
+    body("password")
+      .isLength({ min: 5 })
+      .withMessage("password must be at least 5 characters"),
+  ],
+  async (req, res) => {
+    try {
+      const err = validationResult(req);
 
+      if (!err.isEmpty()) {
+        return res.json({ errors: err.array() });
+      }
+
+      const { name, email, password } = req.body;
+
+      const newUser = new User({
+        name,
+        email,
+        password,
+      });
+
+      await newUser.save();
+
+      res.json("User saved successfully ✅");
+    } catch (error) {
+      res.json("Error: " + error.message);
+    }
+  },
+);
 //for login user
 app.post("/login", async (req, res) => {
   try {
@@ -57,12 +100,10 @@ app.post("/login", async (req, res) => {
 
     // success
     res.send("Login successful ✅");
-
   } catch (error) {
     res.send("Error: " + error.message);
   }
 });
-
 
 mongoose
   .connect(

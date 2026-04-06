@@ -40,39 +40,52 @@ function Login({ setIsLogin }) {
       alert("Login success 🚀");
     }
   };
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-[350px]">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
 
-        <form autoComplete="off" className="flex flex-col gap-4" onSubmit={handleSubmit}>
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300">
+      <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-2xl w-[360px] border border-white/30">
+        
+        <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">
+          Welcome Back 👋
+        </h2>
+        <p className="text-sm text-center text-gray-500 mb-6">
+          Login to continue
+        </p>
+
+        <form
+          autoComplete="off"
+          className="flex flex-col gap-5"
+          onSubmit={handleSubmit}
+        >
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
             onChange={handleChange}
             name="email"
             value={login.email}
-            className="border p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 transition"
           />
 
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Enter your password"
             onChange={handleChange}
-            name="new-password"
-            autoComplete="password"
+            name="password"
+            autoComplete="new-password"
             value={login.password}
-            className="border p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 transition"
           />
 
-          <button className="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
-            Login
+          <button className="bg-blue-500 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 active:scale-95 transition duration-200 shadow-md">
+            Login 🚀
           </button>
         </form>
 
-        <p className="text-sm text-center mt-4">
-          Don't have an account?
-          <span className="text-blue-500 cursor-pointer">Sign Up</span>
+        <p className="text-sm text-center mt-6 text-gray-600">
+          Don't have an account?{" "}
+          <span className="text-blue-600 font-semibold cursor-pointer hover:underline">
+            Sign Up
+          </span>
         </p>
       </div>
     </div>
