@@ -1,0 +1,15 @@
+my-app/
+│
+├── node_modules/
+├── src/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middlewares/
+│   ├── config/
+│   └── app.js
+│
+├── .env
+├── .gitignore
+├── package.json
+└── server.js
