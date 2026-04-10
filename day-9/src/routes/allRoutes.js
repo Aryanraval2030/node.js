@@ -1,8 +1,9 @@
 import express from "express";
-import { addBook } from "../controllers/inrController.js";
+import { addBook, getBooks } from "../controllers/inrController.js";
 
 const router = express.Router();
 
 router.post("/addbooks", addBook);
+router.get("/books", getBooks);
 
 export default router;
