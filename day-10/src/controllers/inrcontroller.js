@@ -1,8 +1,17 @@
 import userSignup from "../models/userModels.js";
+import { validationResult } from "express-validator";
 
 // register user
 export const addUser = async (req, res) => {
   try {
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+      return res.status(400).json({
+        status: false,
+        message: "plz field all data for register",
+        errors: error.array(),
+      });
+    }
     const userCreate = await userSignup.create(req.body);
 
     res.status(201).json({
@@ -24,7 +33,7 @@ export const updateUser = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const userIs = userSignup.findById(id);
+    const userIs = await userSignup.findById(id);
 
     if (!userIs) {
       return res.status(404).json({
@@ -91,3 +100,10 @@ export const deleteUser = async (req, res) => {
     });
   }
 };
+
+//  if (!errors.isEmpty()) {
+//     return res.status(400).json({
+//       status: false,
+//       errors: errors.array(),
+//     });
+//   }

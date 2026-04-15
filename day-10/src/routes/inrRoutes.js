@@ -4,10 +4,11 @@ import {
   deleteUser,
   updateUser,
 } from "../controllers/inrcontroller.js";
+import { createUserValidation } from "../allValidation/userValidation.js";
 
 const userRoutes = express.Router();
 
-userRoutes.post("/user", addUser);
+userRoutes.post("/user", createUserValidation, addUser);
 userRoutes.put("/user/:id", updateUser);
 userRoutes.delete("/user/:id", deleteUser);
 
