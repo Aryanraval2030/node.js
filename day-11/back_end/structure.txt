@@ -1,0 +1,23 @@
+project/
+ ├── models/
+ │    └── studentModel.js
+ ├── controllers/
+ │    └── studentController.js
+ ├── routes/
+ │    └── studentRoutes.js
+ ├── config/
+ │    └── db.js
+ ├── server.js
+ 
+
+ --------------------------_
+
+ model
+
+Field	Type	Required	Description
+name	String	✅	Student name
+age	    Number  ✅	Student age
+email	String	✅	Must be unique
+course	String	✅	Course name
+fees	Number	✅	Course fees
+status	String	❌	active / inactive

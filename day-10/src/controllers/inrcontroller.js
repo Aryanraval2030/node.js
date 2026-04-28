@@ -12,7 +12,7 @@ export const addUser = async (req, res) => {
         errors: error.array(),
       });
     }
-    const userCreate = await userSignup.create(req.body);
+    const userCreate = await userSignup.insertMany(req.body);
 
     res.status(201).json({
       status: true,
@@ -101,9 +101,33 @@ export const deleteUser = async (req, res) => {
   }
 };
 
-//  if (!errors.isEmpty()) {
-//     return res.status(400).json({
-//       status: false,
-//       errors: errors.array(),
-//     });
-//   }
+export const pagUserData = async (req, res) => {
+  try {
+    const { page, limit } = req.query;
+
+    const pageNumber = parseInt(page);
+    const limitNumber = parseInt(limit);
+
+    const skip = (pageNumber - 1) * limitNumber;
+    const total = await userSignup.countDocuments();
+
+    const users = await userSignup
+      .find()
+      .skip(skip)
+      .limit(limitNumber)
+      .sort({ createdAt: -1 });
+    res.status(200).json({
+      success: true,
+      page: pageNumber,
+      limit: limitNumber,
+      total,
+      totalPages: Math.ceil(total / limitNumber),
+      data: users,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
