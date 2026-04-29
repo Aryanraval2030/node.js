@@ -1,0 +1,22 @@
+project/
+│
+├── controllers/
+│   └── product.controller.js
+│
+├── models/
+│   └── proModel.js
+│
+├── routes/
+│   └── proRoutes.js
+│
+├── validations/
+│   └── proValidation.js
+│
+├── middlewares/
+│   └── valiMiddleware.js
+│
+├── utils/
+│   └── ApiError.js
+│
+├── app.js
+└── server.js
