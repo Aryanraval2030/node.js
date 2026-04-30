@@ -1,30 +1,43 @@
 import mongoose, { Schema } from "mongoose";
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    age: {
+      type: Number,
+      required: true,
+      min: 1,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    course: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    fees: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+    status: {
+      type: String,
+      enum: ["active", "inactive"],
+      default: "active",
+    },
   },
-  age: {
-    type: Number,
-    required: true,
+  {
+    timestamps: true,
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  course: {
-    type: String,
-    required: true,
-  },
-  fees: {
-    type: Number,
-    required: true,
-  },
-  status: {
-    type: String,
-  },
-});
+);
+
+userSchema.index({ email: 1 });
+userSchema.index({ name: "text", course: "text" });
 
 export const userModel = mongoose.model("users", userSchema);

@@ -21,3 +21,14 @@ email	String	✅	Must be unique
 course	String	✅	Course name
 fees	Number	✅	Course fees
 status	String	❌	active / inactive
+
+
+
+Query Params
+
+Param	Example	Description
+search	react	Search name/course
+sortBy	fees	Field to sort
+order	asc / desc	Sorting order
+page	1	Page number
+limit	5	Records per page
