@@ -29,7 +29,7 @@ export const proSchema = new mongoose.Schema({
     required: true,
   },
   categoryId: {
-    type: mongoose.Schema.types.objectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
   discount: {
@@ -37,6 +37,4 @@ export const proSchema = new mongoose.Schema({
   },
 });
 
-export const proEco = await mongoose.model("products", proSchema);
-
-// name , price , rate , img , description , categoryId , descount
+export const proEco =  mongoose.model("products", proSchema);
