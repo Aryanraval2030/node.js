@@ -1,22 +1,40 @@
-project/
-│
-├── controllers/
-│   └── product.controller.js
-│
-├── models/
-│   └── proModel.js
-│
-├── routes/
-│   └── proRoutes.js
-│
-├── validations/
-│   └── proValidation.js
-│
-├── middlewares/
-│   └── valiMiddleware.js
-│
-├── utils/
-│   └── ApiError.js
-│
-├── app.js
-└── server.js
+└── 📁back_end
+    └── 📁config
+        ├── db.js
+
+    └── 📁controllers
+        ├── authController.js   ✅ (NEW)
+        ├── categoryContro.js
+        ├── proContro.js
+
+    └── 📁middlewares
+        ├── authMiddleware.js   ✅ (NEW)
+
+    └── 📁models
+        ├── userModel.js        ✅ (NEW)
+        ├── categoryModel.js
+
+    └── 📁routes
+        ├── authRoutes.js       ✅ (NEW)
+        ├── categoryRoute.js
+
+    └── 📁services              ✅ (NEW - company level)
+        ├── authService.js
+
+    └── 📁utils
+        ├── generateToken.js    ✅ (NEW)
+
+    └── 📁validation
+        ├── authValidation.js   ✅ (NEW)
+
+    ├── .env
+    ├── server.js
+
+
+    ---------------------
+
+    here is the flow 
+
+Route → Controller → Service → Model
+                   ↓
+             Utils (JWT)

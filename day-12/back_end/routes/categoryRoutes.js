@@ -4,12 +4,12 @@ import {
   getByIdCate,
   getCategory,
 } from "../controllers/categoryContro.js";
-import {
-  addBulkPro,
-  addProduct,
-  getProduct,
-  getSinglePro,
-} from "../controllers/proContro.js";
+// import {
+//   addBulkPro,
+//   addProduct,
+//   getProduct,
+//   getSinglePro,
+// } from "../controllers/proContro.js";
 
 const route = express.Router();
 
@@ -20,10 +20,10 @@ route.get("/category/:id", getByIdCate);
 
 // for product
 
-route.post("/product", addProduct);
-route.get("/product/:id", getProduct);
-route.get("/sglProduct/:id", getSinglePro);
-route.post("/bulkProducts", addBulkPro);
+// route.post("/product", addProduct);
+// route.get("/product/:id", getProduct);
+// route.get("/sglProduct/:id", getSinglePro);
+// route.post("/bulkProducts", addBulkPro);
 
 export default route;
 
@@ -37,10 +37,3 @@ export default route;
 // get = perticuler category find // http://localhost:5050/api/category/pass id
 
 //----------------------------
-
-//prodects links:-
-
-//post = // http://localhost:5050/api/product
-//get = http://localhost:5050/api/product/ category id
-// get = get all product // http://localhost:5050/api/product
-// get = perticuler product find // http://localhost:5050/api/sglProduct/pass id

@@ -11,7 +11,7 @@ const categorySchema = new mongoose.Schema({
 export const cateEcomPro = mongoose.model("categories", categorySchema);
 
 //productSchema
-export const proSchema = new mongoose.Schema({
+const proSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -37,4 +37,6 @@ export const proSchema = new mongoose.Schema({
   },
 });
 
-export const proEco =  mongoose.model("products", proSchema);
+export const proEco = mongoose.model("products", proSchema);
+
+// buyer Schema for register
