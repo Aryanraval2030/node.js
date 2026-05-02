@@ -30,14 +30,30 @@ export const userRegiCntro = async (req, res) => {
       password: hashPassword,
       role,
     });
+    const token = jwt.sign({
+      id: userRegisted._id,
+      email: userRegisted.email,
+      role: userRegisted.role,
+    });
+
+    res.cookie(
+      "token",
+      token,
+      {
+        httpOnly: true,
+        secure: false,
+        sameSite: "lax",
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "28d" },
+    );
 
     return res.status(201).json({
       status: true,
       message: "user registered successfully",
-      data: userRegisted,
     });
   } catch (error) {
-    return res.status(400).json({
+    return res.status(500).json({
       status: false,
       message: `user not registered ${error.message}`,
     });
@@ -60,6 +76,7 @@ export const userLogin = async (req, res) => {
     const isMatch = await bcrypt.compare(password, checkMail.password);
     if (!isMatch) {
       return res.status(400).json({
+        status: false,
         message: "invalid password",
       });
     }
@@ -69,10 +86,15 @@ export const userLogin = async (req, res) => {
       { expiresIn: "1d" },
     );
 
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: false, // production me true (https)
+      sameSite: "lax",
+    });
+
     return res.status(200).json({
       status: true,
       message: "user Logged In Successfully",
-      data: token,
     });
   } catch (error) {
     res.status(400).json({
