@@ -9,9 +9,11 @@ import { validate } from "../middlewares/authMiddleWare.js";
 
 export const userRoute = express.Router();
 
-userRoute.post("/register", registerValidator,validate, userRegiCntro);
-userRoute.post("/login", loginValidation,validate, userLogin);
+// userRoute.post("/register", registerValidator,validate, userRegiCntro);
+// userRoute.post("/login", loginValidation,validate, userLogin);
 
+userRoute.post("/register", registerValidator, userRegiCntro);
+userRoute.post("/login", loginValidation, userLogin);
 // APIs
 
 //create = http://localhost:5050/api/auth/register

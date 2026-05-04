@@ -4,12 +4,6 @@ import {
   getByIdCate,
   getCategory,
 } from "../controllers/categoryContro.js";
-// import {
-//   addBulkPro,
-//   addProduct,
-//   getProduct,
-//   getSinglePro,
-// } from "../controllers/proContro.js";
 
 const route = express.Router();
 
@@ -18,12 +12,6 @@ route.post("/category", addCategory);
 route.get("/allCategory", getCategory);
 route.get("/category/:id", getByIdCate);
 
-// for product
-
-// route.post("/product", addProduct);
-// route.get("/product/:id", getProduct);
-// route.get("/sglProduct/:id", getSinglePro);
-// route.post("/bulkProducts", addBulkPro);
 
 export default route;
 

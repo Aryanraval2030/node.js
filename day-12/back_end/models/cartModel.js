@@ -4,7 +4,7 @@ export const cartSchema = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "userRegi",
-        required: true,
+      required: true,
     },
     items: [
       {

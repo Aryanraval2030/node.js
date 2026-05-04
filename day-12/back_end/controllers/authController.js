@@ -1,6 +1,8 @@
 import { userRegister } from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const userRegiCntro = async (req, res) => {
   try {
@@ -30,11 +32,15 @@ export const userRegiCntro = async (req, res) => {
       password: hashPassword,
       role,
     });
-    const token = jwt.sign({
-      id: userRegisted._id,
-      email: userRegisted.email,
-      role: userRegisted.role,
-    });
+    const token = jwt.sign(
+      {
+        id: userRegisted._id,
+        email: userRegisted.email,
+        role: userRegisted.role,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "28d" }
+    );
 
     res.cookie(
       "token",
@@ -43,9 +49,7 @@ export const userRegiCntro = async (req, res) => {
         httpOnly: true,
         secure: false,
         sameSite: "lax",
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: "28d" },
+      }
     );
 
     return res.status(201).json({

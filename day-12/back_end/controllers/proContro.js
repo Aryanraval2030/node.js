@@ -1,5 +1,6 @@
 import { proEco } from "../models/categoryModel.js";
 
+// for add one product
 export const addProduct = async (req, res) => {
   try {
     const { name, price, rate, img, description, categoryId, discount } =
@@ -45,6 +46,8 @@ export const addProduct = async (req, res) => {
     });
   }
 };
+
+// for get products by categoryId
 
 export const getProduct = async (req, res) => {
   try {
