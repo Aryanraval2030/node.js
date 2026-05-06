@@ -1,7 +1,0 @@
-src/
- ├── controllers/
- ├── models/
- ├── routes/
- ├── middleware/
- ├── config/
- └── app.js
