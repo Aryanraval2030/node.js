@@ -82,3 +82,10 @@ export const userLogin = async (req, res) => {
     });
   }
 };
+
+export const createTask = async (req, res) => {
+  try {
+    const { title, description,status, priority } = req.body;
+    if(!title,)
+  } catch (error) {}
+};

@@ -1,5 +1,5 @@
 register user = http://localhost:5050/api/auth/register
-
+login user = http://localhost:5050/api/auth/login
 
 
 
