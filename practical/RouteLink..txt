@@ -1,1 +1,17 @@
 register user = http://localhost:5050/api/auth/register
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //   secure: false, // production me true (https)
