@@ -1,4 +1,5 @@
 import { User } from "../models/userModel.js";
+import bcrypt from "bcrypt";
 
 export const userRegister = async (req, res) => {
   try {
@@ -11,10 +12,12 @@ export const userRegister = async (req, res) => {
       });
     }
 
+    const hashPassword = await bcrypt.hash(password, 10);
+
     const userRegistered = await User.create({
       name,
       email,
-      password,
+      password: hashPassword,
     });
 
     res.status(201).json({
@@ -24,8 +27,8 @@ export const userRegister = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      status: true,
-      message: `error in ${error.message}`,
+      status: false,
+      message: `error in userContro ${error.message}`,
     });
   }
 };
@@ -40,6 +43,24 @@ export const userLogin = async (req, res) => {
       });
     }
 
-    const checkUser  =  await
-  } catch (error) {}
+    const checkUser = await User.findOne({ email });
+
+    if (!checkUser) {
+      return res.status(404).json({
+        status: false,
+        message: "user not found",
+      });
+    }
+
+    res.status(200).json({
+      status: true,
+      message: "user login",
+      data: checkUser,
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: false,
+      message: `error in usercontro ${error.message}`,
+    });
+  }
 };
