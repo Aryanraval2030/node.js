@@ -11,13 +11,17 @@ const taskSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      default: pending,
+      default: "pending",
     },
     priority: {
       type: "String",
       required: true,
     },
-    user: {
+    deadline: {
+      type: String,
+      required: true,
+    },
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "userRegister",
     },
