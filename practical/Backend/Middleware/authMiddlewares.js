@@ -11,6 +11,6 @@ export const middleWare = (req, res, next) => {
         console.log(decoded);
         next();
     } catch (error) {
-        res.status(401).json({ message: "Invalid token" });
+        res.status(401).json({ message: "Unauthorized" });
     }
 };

@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use("/api", router);
 
-const serverRun = () => {
+const serverStart = () => {
   try {
     connectDB();
 
@@ -21,4 +21,14 @@ const serverRun = () => {
   }
 };
 
-serverRun();
+serverStart();
+
+// for async error handle
+process.on("unhandledRejection", (error) => {
+  console.log(`unhandledRejection error ${error.message}`);
+});
+
+// for sync error handle
+process.on("uncaughtException", (error) => {
+  console.log(`uncaughtException error ${error.message}`);
+});
