@@ -1,7 +1,15 @@
+post API links
+-------------------
 for create post = http://localhost:5050/api/create 
 for get = http://localhost:5050/api/posts?search=node&sortBy=createdAt&order=desc&page=1&limit=10
-for get Single post = http://localhost:5050/api/post/69fc34fdcedd450dfac605f2
-for update data = http://localhost:5050/api/post/69fc34fdcedd450dfac605f2
-for delete data = http://localhost:5050/api/delete/69fc34fdcedd450dfac605f2
+for get Single post = http://localhost:5050/api/post/id
+for update data = http://localhost:5050/api/update/id
+for delete data = http://localhost:5050/api/delete/id
 for add comment = http://localhost:5050/api/comment/postId
 for watch comments = http://localhost:5050/api/getcomments/postId
+for like post = http://localhost:5050/api/like/postId
+
+user API links
+-------------------
+for register user = http://localhost:5050/api/auth/register
+for login user = http://localhost:5050/api/auth/login

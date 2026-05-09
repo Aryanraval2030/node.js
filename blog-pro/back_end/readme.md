@@ -1,0 +1,21 @@
+## Features
+
+- User Authentication using JWT
+- Secure User Registration & Login
+- Password Hashing with bcrypt
+- Create Blog Posts
+- Get All Posts
+- Get Single Post
+- Update Post
+- Delete Post
+- Search Posts
+- Sorting Posts
+- Pagination Support
+- Add Comments on Posts
+- Get All Comments of a Post
+- Like / Unlike Posts
+- Protected Routes using Authentication Middleware
+- Ownership Middleware (Only post owner can update/delete their own posts)
+- Standard API Response Format
+- MongoDB Database Integration using Mongoose
+- RESTful API Architecture

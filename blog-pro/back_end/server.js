@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectDb } from "./src/config/db.js";
-import { userRoutes } from "./src/routes/auth_routes.js";
-import { curdRoutes } from "./src/routes/post.routes.js";
+import { userRoutes } from "./src/routes/authRoutes.js";
+import { curdRoutes } from "./src/routes/postRoutes.js";
 let app = express();
 app.use(express.json());
 dotenv.config();
@@ -22,3 +22,12 @@ const serverStart = () => {
 };
 
 serverStart();
+
+// for handle async error
+process.on("unhandledRejection", (error) => {
+  console.log(`error in unhandledRejection ${error.message}`);
+});
+// for handle sync error
+process.on("uncaughtException", (error) => {
+  console.log(`error in uncaughtException ${error.message}`);
+});

@@ -1,7 +1,8 @@
 import { CommentSchema } from "../models/commentModel.js";
-import { postUser } from "../models/post_model.js";
+import { postUser } from "../models/postModel.js";
 import { likePost } from "../models/postLikeModel.js";
 
+//for create post
 export const createPost = async (req, res) => {
   try {
     const { title, content, tags } = req.body;
@@ -33,6 +34,7 @@ export const createPost = async (req, res) => {
   }
 };
 
+// for getpost with search, sort
 export const getPost = async (req, res) => {
   try {
     let { search, sortBy, order, page, limit } = req.query;
@@ -84,6 +86,7 @@ export const getPost = async (req, res) => {
   }
 };
 
+// for get single post
 export const getSiglePost = async (req, res) => {
   try {
     const { id } = req.params;
@@ -109,6 +112,7 @@ export const getSiglePost = async (req, res) => {
   }
 };
 
+// for update post
 export const updatePost = async (req, res) => {
   try {
     const { id } = req.params;
@@ -152,6 +156,7 @@ export const updatePost = async (req, res) => {
   }
 };
 
+// for delete post
 export const deletePost = async (req, res) => {
   try {
     const { id } = req.params;
@@ -178,6 +183,7 @@ export const deletePost = async (req, res) => {
   }
 };
 
+// for add comment in post
 export const comment = async (req, res) => {
   try {
     const { postId } = req.params;
@@ -210,6 +216,7 @@ export const comment = async (req, res) => {
   }
 };
 
+// for get comments with who comments in post 
 export const getComments = async (req, res) => {
   try {
     const { postId } = req.params;
@@ -230,55 +237,56 @@ export const getComments = async (req, res) => {
   }
 };
 
-// export const likesPost = async (req, res) => {
-//   try {
-//     const { postId } = req.params;
+// for like/dislike post 
+export const likesPost = async (req, res) => {
+  try {
+    const { postId } = req.params;
 
-//     const userId = req.user.id;
-//     const finds = await postUser.findById(postId);
+    const userId = req.user.id;
+    const finds = await postUser.findById(postId);
 
-//     if (!finds) {
-//       return res.status(404).json({
-//         status: false,
-//         mesage: "post not found",
-//       });
-//     }
+    if (!finds) {
+      return res.status(404).json({
+        status: false,
+        mesage: "post not found",
+      });
+    }
 
-//     const isLiked = finds.like.includes(userId);
+    const isLiked = finds.likes.includes(userId);
 
-//     if (isLiked) {
-//       const updateLike = await postUser.findByIdAndUpdate(
-//         postId,
-//         {
-//           $pull: { like: userId },
-//         },
-//         { new: true },
-//       );
+    if (isLiked) {
+      const updateLike = await postUser.findByIdAndUpdate(
+        postId,
+        {
+          $pull: { likes: userId },
+        },
+        { new: true },
+      );
 
-//       return res.status(200).json({
-//         status: true,
-//         message: "remove like",
-//       });
-//     } else {
-//       const updateLike = await postUser.findByIdAndUpdate(
-//         postId,
-//         {
-//           $addToSet: { like: userId },
-//         },
-//         { new: true },
-//       );
+      return res.status(200).json({
+        status: true,
+        message: "remove like",
+      });
+    } else {
+      const updateLike = await postUser.findByIdAndUpdate(
+        postId,
+        {
+          $addToSet: { likes: userId },
+        },
+        { new: true },
+      );
 
-//       res.status(200).json({
-//         status: true,
-//         message: "post liked",
-//         likeCount: updateLike.likes.length,
-//       });
-//     }
-//   } catch (error) {
-//     return res.status(500).json({
-//       status: false,
-//       message: error.message,
-//     });
-//   }
-// };
+      res.status(200).json({
+        status: true,
+        message: "post liked",
+        likeCount: updateLike.likes.length,
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      message: error.message,
+    });
+  }
+};
 
