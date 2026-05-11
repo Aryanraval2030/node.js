@@ -1,0 +1,9 @@
+server/
+│
+├── controllers/
+├── routes/
+├── models/
+├── middleware/
+├── config/
+├── uploads/
+└── utils/

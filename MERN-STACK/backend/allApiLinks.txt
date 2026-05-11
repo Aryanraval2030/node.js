@@ -1,0 +1,1 @@
+register user = http://localhost:6419/api/auth/register
