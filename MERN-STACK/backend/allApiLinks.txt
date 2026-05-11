@@ -1,1 +1,13 @@
 register user = http://localhost:6419/api/auth/register
+login user = http://localhost:6419/api/auth/login
+
+----------------
+
+student APIS -:-
+
+add student =http://localhost:6419/api/students
+get all students = http://localhost:6419/api/students
+get signle student = http://localhost:6419/api/students/studentId
+update signle student = http://localhost:6419/api/students/studentId
+delete signle student = http://localhost:6419/api/students/studentId
+----------------
