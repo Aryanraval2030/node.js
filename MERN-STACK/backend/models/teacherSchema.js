@@ -6,6 +6,10 @@ const teacherSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
     },
+    name: {
+      type: String,
+      required: true,
+    },
     subject: {
       type: String,
       required: true,
@@ -18,4 +22,4 @@ const teacherSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-export const teacher = mogoose.model("teacher", teacherSchema);
+export const teacher = mongoose.model("teacher", teacherSchema);

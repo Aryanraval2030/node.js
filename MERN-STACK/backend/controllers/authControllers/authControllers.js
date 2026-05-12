@@ -34,7 +34,7 @@ export const registerUser = async (req, res) => {
     });
 
     const token = jwt.sign(
-      { id: createUser._id, email: createUser.email },
+      { id: createUser._id, email: createUser.email, role: createUser.role },
       process.env.JWT_SECRET,
     );
 
