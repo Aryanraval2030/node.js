@@ -20,14 +20,14 @@ const assingmentSchema = new mongoose.Schema({
     ref: "teacher",
     required: true,
   },
-  studentId: {
+ courseId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "student",
+    ref: "course",
     required: true,
   },
-  status: {
-    type: String,
-    enum: ["pending | submitted"],
+
+  dueDate: {
+    type: Date,
     required: true,
   },
 },  { timestamps: true },

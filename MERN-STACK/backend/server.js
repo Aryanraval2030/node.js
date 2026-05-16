@@ -7,6 +7,8 @@ import { studRoutes } from "./routes/studentRoutes/stuRoutes.js";
 import { teachRoutes } from "./routes/teacherRoutes/teacherRoutes.js";
 import { courseRoutes } from "./routes/courseRoutes/courseRoutes.js";
 import { attendRoutes } from "./routes/students/attendRoutes.js";
+import { markRoutes } from "./routes/students/markRoutes.js";
+import { assingmentRoutes } from "./routes/students/assingmentRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -17,7 +19,9 @@ app.use("/api/auth", userRoutes);
 app.use("/api", studRoutes);
 app.use("/api", teachRoutes);
 app.use("/api", courseRoutes);
-app.use("/api",attendRoutes)
+app.use("/api", attendRoutes);
+app.use("/api", markRoutes);
+app.use("/api", assingmentRoutes);
 
 const serverStart = () => {
   try {

@@ -20,8 +20,12 @@ add teacher = http://localhost:6419/api/teachers
 
 course APIS -:-
 add course = http://localhost:6419/api/courses
+get course with students = http://localhost:6419/api/courses/courseId
 
 ----------------
 
 attendance -:- 
 add attendance = http://localhost:6419/api/attendance
+
+marks -:-
+add marks = http://localhost:6419/api/marks

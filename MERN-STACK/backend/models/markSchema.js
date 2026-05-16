@@ -7,12 +7,20 @@ const marksSchema = new mongoose.Schema(
       ref: "student",
       required: true,
     },
-    subject: {
-      type: String,
+
+    courseId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "course",
       required: true,
-      trim: true,
     },
-    marks: {
+
+    teacherId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
+
+    mark: {
       type: Number,
       required: true,
     },

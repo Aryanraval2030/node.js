@@ -2,9 +2,13 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    userId: {
+    createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
+      required: true,
+    },
+    studentName: {
+      type: String,
       required: true,
     },
     rollNumber: {
@@ -12,10 +16,13 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    course: {
-      type: String,
-      required: true,
-    },
+    course: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "course",
+        required: true,
+      },
+    ],
     semester: {
       type: Number,
       required: true,

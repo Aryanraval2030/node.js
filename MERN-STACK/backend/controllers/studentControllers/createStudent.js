@@ -1,19 +1,33 @@
 import { studentSchema } from "../../models/studentSchema.js";
+import { userAuth } from "../../models/userSchema.js";
 
 // create student
 export const createStud = async (req, res) => {
   try {
-    const { rollNumber, course, semester } = req.body;
+    const { studentName,   email,
+      password,
+      phone, rollNumber, course, semester } = req.body;
 
-    if (!rollNumber || !course || !semester) {
+ if (
+   !studentName ||
+   !email ||
+   !password ||
+   !phone ||
+   !rollNumber ||
+   !course ||
+   !semester
+) {
       return res.status(400).json({
         status: false,
         message: "all field required",
       });
     }
 
+ 
+
     const findStud = await studentSchema.create({
-      userId: req.user.id,
+      createdBy: req.user.id,
+      studentName,
       rollNumber,
       course,
       semester,

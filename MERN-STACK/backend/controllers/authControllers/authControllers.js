@@ -80,7 +80,7 @@ export const loginUser = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: findEmail._id, email: findEmail.email },
+      { id: findEmail._id, email: findEmail.email, role: findEmail.role },
       process.env.JWT_SECRET,
     );
 
