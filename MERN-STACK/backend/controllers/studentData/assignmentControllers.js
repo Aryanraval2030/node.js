@@ -2,9 +2,16 @@ import { assignment } from "../../models/assignmentSchema.js";
 
 export const assingmentContro = async (req, res) => {
   try {
-    let { title, description, file } = req.body;
+    let { title, description, file, dueDate, courseId, teacherId } = req.body;
 
-    if (!title || !description || !file) {
+    if (
+      !title ||
+      !description ||
+      !file ||
+      !dueDate ||
+      !courseId ||
+      !teacherId
+    ) {
       return res.status(400).json({
         status: false,
         message: "all field required",
@@ -15,6 +22,9 @@ export const assingmentContro = async (req, res) => {
       title,
       description,
       file,
+      dueDate,
+      courseId,
+      teacherId,
     });
 
     res.status(201).json({

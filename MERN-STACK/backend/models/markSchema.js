@@ -19,7 +19,14 @@ const marksSchema = new mongoose.Schema(
       ref: "user",
       required: true,
     },
-
+    rollNumber: {
+      type: String,
+      required: true,
+    },
+    subject: {
+      type: String,
+      required: true,
+    },
     mark: {
       type: Number,
       required: true,

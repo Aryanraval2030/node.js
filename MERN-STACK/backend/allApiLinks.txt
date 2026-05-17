@@ -15,6 +15,7 @@ delete signle student = http://localhost:6419/api/students/studentId
 teacher APIS -:-
 
 add teacher = http://localhost:6419/api/teachers
+update teacher = http://localhost:6419/api/teachers/id
 
 ----------------
 
@@ -29,3 +30,6 @@ add attendance = http://localhost:6419/api/attendance
 
 marks -:-
 add marks = http://localhost:6419/api/marks
+
+assignments -:-
+add assignments = http://localhost:6419/api/assignments

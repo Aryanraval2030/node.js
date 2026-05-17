@@ -4,9 +4,9 @@ import { studentSchema } from "../../models/studentSchema.js";
 
 export const addMarks = async (req, res) => {
   try {
-    const { rollNumber, courseName, mark } = req.body;
+    const { rollNumber, courseName, mark,teacherId } = req.body;
 
-    if (!rollNumber || !courseName || mark === undefined) {
+    if (!rollNumber || !courseName || mark === undefined|| !teacherId) {
       return res.status(400).json({
         status: false,
         message: "all field required",
@@ -53,6 +53,9 @@ export const addMarks = async (req, res) => {
     }
 
     const createMarks = await marks.create({
+      studentId: findStudent._id,
+      courseId: findCourse._id,
+      teacherId,
       rollNumber,
       subject: courseName,
       mark,
