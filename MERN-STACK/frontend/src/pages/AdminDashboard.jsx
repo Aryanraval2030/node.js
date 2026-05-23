@@ -16,7 +16,7 @@ import { IoMdTime } from "react-icons/io";
 import RecentStu from "../components/RecentStu.jsx";
 import CourseComplate from "../components/CourseComplate.jsx";
 
-function Admin() {
+function AdminDashboard() {
   const [open, setOpen] = useState(false);
 
   const inputRef = useRef(null);
@@ -101,7 +101,7 @@ function Admin() {
             </div>
             <div className={style.box}>
               <p>
-                <LiaChalkboardTeacherSolid /> total teacteachershers
+                <LiaChalkboardTeacherSolid /> total teachers
               </p>
               <p>2,841</p>
               <p>+12 this month</p>
@@ -111,7 +111,6 @@ function Admin() {
                 <IoBookSharp /> total courses
               </p>
               <p>2,841</p>
-              <p>+12 this month</p>
             </div>
             <div className={style.box}>
               <p>
@@ -139,7 +138,7 @@ function Admin() {
             </div>
             <div className={style.CourseCompletion}>
               <div className={style.recentInr}>
-                <p>Course completion</p>
+                <p>Top course completion</p>
                 <p>view all</p>
               </div>
               <div className={style.students}>
@@ -158,4 +157,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AdminDashboard;

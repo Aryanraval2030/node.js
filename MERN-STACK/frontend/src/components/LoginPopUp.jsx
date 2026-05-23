@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import style from "../css/popUp.module.css";
+import style from "../css/LoginPopUp.module.css";
 
-function PopUp() {
+function LoginPopUp() {
   const [show, setShow] = useState(false);
   const formHandle = (e) => {
     e.preventDefault();
   };
   return (
     <>
-      <div className={style.system}>
-        <h1>learning mangement system</h1>
-      </div>
       <form onSubmit={formHandle} className={style.container}>
         <h1>login</h1>
         <div className={style.inner}>
-          <input type="text" name="" placeholder="enter your email" />
-
-
+          <input
+            className={style.searchBtn}
+            type="text"
+            name=""
+            placeholder="enter your email"
+          />
           <div className={style.inr}>
             <input
               type={show ? "text" : "password"}
@@ -29,10 +29,10 @@ function PopUp() {
             </button>
           </div>
         </div>
-        <button type="submit">login</button>
+        <button type="submit" className={style.button}>login</button>
       </form>
     </>
   );
 }
 
-export default PopUp;
+export default LoginPopUp;
