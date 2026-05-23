@@ -13,6 +13,8 @@ import SearchBtn from "../components/SearchBtn.jsx";
 import { FaSearch } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { IoMdTime } from "react-icons/io";
+import RecentStu from "../components/RecentStu.jsx";
+import CourseComplate from "../components/CourseComplate.jsx";
 
 function Admin() {
   const [open, setOpen] = useState(false);
@@ -122,7 +124,32 @@ function Admin() {
 
           <div className={style.recentActivity}>
             <div className={style.recentStudent}>
-
+              <div className={style.recentInr}>
+                <p>recent student</p>
+                <p>view all</p>
+              </div>
+              <div className={style.students}>
+                <RecentStu />
+                <RecentStu />
+                <RecentStu />
+                <RecentStu />
+                <RecentStu />
+                <RecentStu />
+              </div>
+            </div>
+            <div className={style.CourseCompletion}>
+              <div className={style.recentInr}>
+                <p>Course completion</p>
+                <p>view all</p>
+              </div>
+              <div className={style.students}>
+                <CourseComplate courseName={"React.js"} progress={50} />
+                <CourseComplate courseName={"node.js"} progress={20} />
+                <CourseComplate courseName={"html"} progress={40} />
+                <CourseComplate courseName={"css"} progress={90} />
+                <CourseComplate courseName={"javascript"} progress={45} />
+                <CourseComplate courseName={"Express.js"} progress={55} />
+              </div>
             </div>
           </div>
         </div>
