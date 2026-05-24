@@ -1,10 +1,19 @@
 import { userAuth } from "../../models/userSchema.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { validationResult } from "express-validator";
 
 export const registerUser = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      status: false,
+      errors: errors.array(),
+    });
+  }
   try {
-    const { name, email, password, role, phone, profilePic } = req.body;
+    const { firstName, lastName, email, password, role, phone, profilePic } =
+      req.body;
 
     const findUser = await userAuth.findOne({ email });
 
@@ -15,7 +24,7 @@ export const registerUser = async (req, res) => {
       });
     }
 
-    if (!name || !email || !password || !phone) {
+    if (!firstName | !lastName || !email || !password || !phone) {
       return res.status(400).json({
         status: false,
         message: "all field required",
@@ -25,7 +34,8 @@ export const registerUser = async (req, res) => {
     const hashPassword = await bcryptjs.hash(password, 10);
 
     const createUser = await userAuth.create({
-      name,
+      firstName,
+      lastName,
       email,
       password: hashPassword,
       role,
