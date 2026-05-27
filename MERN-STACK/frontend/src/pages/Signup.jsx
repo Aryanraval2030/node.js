@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "../css/Signup.module.css";
 import { MdSecurity } from "react-icons/md";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
@@ -7,6 +7,7 @@ import { useState } from "react";
 import { MdOutlineAddAPhoto } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { signupUser } from "../apis/api.js";
+import cookies from "js-cookie";
 
 function Signup() {
   const [show, setShow] = useState(false);
@@ -20,7 +21,6 @@ function Signup() {
     phone: "",
     password: "",
     role: "",
-    // profilePic: "",
   });
   const handleChange = (e) => {
     setFormData({
@@ -63,6 +63,13 @@ function Signup() {
       alert(error.message);
     }
   };
+
+  useEffect(() => {
+    const token = cookies.get("token");
+    if (token) {
+      navigate("/admin-dashboard");
+    }
+  }, []);
 
   return (
     <div className={style.container}>

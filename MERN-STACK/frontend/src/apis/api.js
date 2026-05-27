@@ -1,4 +1,5 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
+import Cookies from "js-cookie";
 
 export const signupUser = async (userData) => {
   const response = await fetch(`${BASE_URL}/auth/register`, {
@@ -16,6 +17,7 @@ export const signupUser = async (userData) => {
   if (!response.ok) {
     throw new Error(data.message || "Signup Failed");
   }
+  Cookies.set("token", data.token, {expires:28});
 
   return data;
 };

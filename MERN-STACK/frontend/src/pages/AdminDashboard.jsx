@@ -15,6 +15,8 @@ import { IoIosNotifications } from "react-icons/io";
 import { IoMdTime } from "react-icons/io";
 import RecentStu from "../components/RecentStu.jsx";
 import CourseComplate from "../components/CourseComplate.jsx";
+import { IoMdLogOut } from "react-icons/io";
+import Cookies from "js-cookie";
 
 function AdminDashboard() {
   const [open, setOpen] = useState(false);
@@ -26,6 +28,16 @@ function AdminDashboard() {
     setTimeout(() => {
       inputRef.current.focus();
     }, 0);
+  };
+
+  const logOutUser = () => {
+    const confirmLogout = window.confirm("Are you sure you want to logout?");
+
+    if (confirmLogout) {
+      Cookies.remove("token");
+
+      window.location.href = "/";
+    }
   };
 
   return (
@@ -67,8 +79,16 @@ function AdminDashboard() {
           </p>
         </div>
         <div className={style.lastInr}>
-          <div className={style.rounded}>AD</div>
-          <h3>Admin</h3>
+          <div className={style.roundedOtr}>
+            <div className={style.rounded}>AD</div>
+            <h3>Admin</h3>
+          </div>
+
+          <IoMdLogOut
+            size={"28px"}
+            onClick={logOutUser}
+            className={style.logOut}
+          />
         </div>
       </div>
       <div className={style.inr2}>
