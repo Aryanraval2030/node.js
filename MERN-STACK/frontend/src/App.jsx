@@ -16,12 +16,12 @@ function App() {
           path="/admin-dashboard"
           element={
             <ProtectedRoute>
-              <AdminDashboard />
             </ProtectedRoute>
           }
         /> */}
-        <Route path="/student-dashboard" element={<StudentDashboard/>}/>
-        
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
       </Routes>
     </>
   );
