@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../css/TeacherComp.module.css";
+import style from "../../style/teacher/TeacherComp.module.css";
 function Teacher() {
   return (
     <div className={style.topicSection}>

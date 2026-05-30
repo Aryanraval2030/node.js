@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../css/RecentStu.module.css";
+import style from "../../style/admin/RecentStu.module.css";
 
 function RecentStu() {
   return (

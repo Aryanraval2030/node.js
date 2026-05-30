@@ -1,0 +1,23 @@
+.outer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  gap: 20px;
+  
+  
+}
+.progressFill {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-align: right;
+  border-radius: 15px;
+  width: 100%;
+  
+}
+.proFillInr {
+  background-color: rgb(232, 13, 174);
+  transition: all 0.5s ease;
+  color: black;
+  
+}

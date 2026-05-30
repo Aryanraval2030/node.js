@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "../css/Student.module.css";
+import style from "../../style/student/Student.module.css";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa6";
 function StudentDashboard() {

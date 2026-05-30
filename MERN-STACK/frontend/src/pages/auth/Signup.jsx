@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import style from "../css/Signup.module.css";
+import style from "../../style/auth/Signup.module.css";
 import { MdSecurity } from "react-icons/md";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import { PiArrowsInCardinalThin, PiStudent } from "react-icons/pi";
 import { useState } from "react";
 import { MdOutlineAddAPhoto } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { signupUser } from "../apis/api.js";
+import { signupUser } from "../../apis/api.js";
 import cookies from "js-cookie";
 
 function Signup() {

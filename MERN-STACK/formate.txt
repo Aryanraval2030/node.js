@@ -1,0 +1,66 @@
+src
+┣ apis
+┃ ┗ api.js
+
+┣ assets
+┃ ┣ image.png
+┃ ┗ react.svg
+
+┣ layouts
+┃ ┣ AdminLayout.jsx
+┃ ┣ TeacherLayout.jsx
+┃ ┗ StudentLayout.jsx
+
+┣ pages
+┃ ┣ admin
+┃ ┃ ┣ DashboardHome.jsx
+┃ ┃ ┣ Teachers.jsx
+┃ ┃ ┣ Students.jsx
+┃ ┃ ┣ Courses.jsx
+┃ ┃ ┣ Analytics.jsx
+┃ ┃ ┣ Reports.jsx
+┃ ┃ ┣ Notifications.jsx
+┃ ┃ ┗ Settings.jsx
+┃ ┃
+┃ ┣ teacher
+┃ ┃ ┣ TeacherHome.jsx
+┃ ┃ ┣ Attendance.jsx
+┃ ┃ ┗ Projects.jsx
+┃ ┃
+┃ ┣ student
+┃ ┃ ┣ StudentHome.jsx
+┃ ┃ ┣ Assignments.jsx
+┃ ┃ ┗ Progress.jsx
+┃ ┃
+┃ ┗ auth
+┃   ┗ Signup.jsx
+
+┣ components
+┃ ┣ common
+┃ ┃ ┣ SearchBtn.jsx
+┃ ┃ ┣ LoginPopup.jsx
+┃ ┃ ┗ ProtectedRoute.jsx
+┃ ┃
+┃ ┣ admin
+┃ ┃ ┣ Sidebar.jsx
+┃ ┃ ┣ TeacherCard.jsx
+┃ ┃ ┣ StudentTable.jsx
+┃ ┃ ┗ AnalyticsChart.jsx
+┃ ┃
+┃ ┣ teacher
+┃ ┃ ┣ AttendanceTable.jsx
+┃ ┃ ┗ ProjectCard.jsx
+┃ ┃
+┃ ┗ student
+┃   ┣ CourseComplete.jsx
+┃   ┗ RecentStu.jsx
+
+┣ styles
+┃ ┣ admin
+┃ ┣ teacher
+┃ ┣ student
+┃ ┗ global
+
+┣ App.jsx
+┣ main.jsx
+┗ index.css

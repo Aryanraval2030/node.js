@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from "../css/CourseComplate.module.css";
+import style from "../../style/teacher/CourseComplate.module.css";
 function CourseComplate({ progress, courseName }) {
   const [animated, setAnimated] = useState(0);
   useEffect(() => {

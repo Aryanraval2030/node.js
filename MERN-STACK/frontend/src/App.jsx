@@ -1,15 +1,14 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import Signup from "./pages/Signup.jsx";
-import LoginPopUp from "./components/LoginPopUp.jsx";
+import Signup from "./pages/auth/Signup.jsx";
 import { Routes, Route } from "react-router-dom";
-import AdminDashboard from "./pages/AdminDashboard.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import StudentDashboard from "./pages/StudentDashboard.jsx";
-import TeacherDashboard from "./pages/TeacherDashboard.jsx";
-import Teacher from "./components/Teacher.jsx";
-import Attendance from "./components/Attendance.jsx";
-import ProjectAssign from "./components/ProjectAssign.jsx";
+import ProtectedRoute from "./components/common/ProtectedRoute.jsx";
+import StudentDashboard from "./pages/student/StudentDashboard.jsx";
+import TeacherDashboard from "./pages/teacher/TeacherDashboard.jsx";
+import Teacher from "./components/teacher/TeacherHome.jsx";
+import Attendance from "./pages/teacher/Attendance.jsx";
+import ProjectAssign from "./pages/teacher/ProjectAssign.jsx";
+import AdminDashboard from "./pages/admin/DashboardHome.jsx";
 
 function App() {
   return (

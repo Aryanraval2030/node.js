@@ -1,0 +1,34 @@
+.teacherDashboard {
+  padding: 24px;
+  color: white;
+  min-height: 100vh;
+}
+
+/* NAVBAR  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(106, 43, 165, 0.39);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+}
+.navLinks a {
+  color: white;
+  text-decoration: none;
+}
+.navLinks a:hover {
+  color: rgb(31, 123, 204);
+  text-decoration: none;
+}
+.navLinks p {
+  cursor: pointer;
+  color: #9ca3af;
+}

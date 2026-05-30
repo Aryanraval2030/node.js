@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../css/ProjectAssignComp.module.css";
+import style from "../../style/teacher/ProjectAssignComp.module.css";
 
 function ProjectAssign() {
   return (

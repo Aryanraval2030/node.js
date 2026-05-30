@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../css/AttendanceComp.module.css";
+import style from "../../style/teacher/AttendanceComp.module.css";
 
 // teacher can submit attendence component
 function Attendance() {

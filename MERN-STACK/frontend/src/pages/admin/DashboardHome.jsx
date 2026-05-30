@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import style from "../css/Admin.module.css";
+import style from "../../style/admin/Admin.module.css";
 import { MdOutlineDashboard } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
@@ -9,12 +9,12 @@ import { GrAnalytics } from "react-icons/gr";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GiNotebook } from "react-icons/gi";
-import SearchBtn from "../components/SearchBtn.jsx";
+import SearchBtn from "../../components/common/SearchBtn.jsx";
 import { FaSearch } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { IoMdTime } from "react-icons/io";
-import RecentStu from "../components/RecentStu.jsx";
-import CourseComplate from "../components/CourseComplate.jsx";
+import RecentStu from "../../components/admin/RecentStu.jsx";
+import CourseComplate from "../../components/teacher/CourseComplate.jsx";
 import { IoMdLogOut } from "react-icons/io";
 import Cookies from "js-cookie";
 

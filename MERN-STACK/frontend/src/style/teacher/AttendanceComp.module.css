@@ -1,0 +1,103 @@
+.attendanceCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(106, 43, 165, 0.39);
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 20px;
+}
+.attendanceSection {
+  display: flex;
+}
+.attendanceTable {
+  width: 100%;
+  text-align: center;
+}
+.studentInfo h4 {
+  font-size: 22px;
+}
+
+.studentInfo p {
+  color: #9ca3af;
+  margin-top: 6px;
+}
+
+.studentInfo span {
+  display: block;
+  margin-top: 6px;
+  color: #cbd5e1;
+}
+
+.toggleSection {
+  display: flex;
+  gap: 30px;
+  margin-top: 24px;
+}
+
+.toggleBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.reasonInput {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #263244;
+  background: #0f172a;
+  color: white;
+}
+
+.attendanceBtn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #374151;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 4px;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #3b82f6;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(22px);
+}

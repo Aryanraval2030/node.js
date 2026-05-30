@@ -1,0 +1,178 @@
+.container {
+  display: flex;
+  height: 100vh;
+  gap: 10px;
+}
+
+.inr1 {
+  width: 25%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 5px 0 30px;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 41, 59, 0.6) 0%,
+    rgba(15, 23, 42, 0.8) 100%
+  );
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+.inr2 {
+  width: 75%;
+  height: 100vh;
+  padding: 0px 30px 0px 0px;
+}
+
+.textInr {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 2px solid black;
+}
+.textInr > p {
+  color: rgb(160, 65, 250);
+}
+
+.mainTextInr {
+  overflow-y: auto;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainTextInr > h4 {
+  color: rgb(160, 65, 250);
+}
+
+.mainTextInr > p {
+  padding: 5px 0 5px 5px;
+  border-radius: 5px;
+  width: 98%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+.mainTextInr > p:hover {
+  box-shadow: 0 0px 10px rgba(44, 44, 179, 0.402);
+  background: rgba(44, 44, 179, 0.2);
+  border-left: 3px solid rgb(57, 57, 231);
+}
+.textInr3 > p {
+  color: rgb(160, 65, 250);
+}
+.lastInr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  border-top: 2px solid black;
+  height: 15vh;
+}
+.roundedOtr {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rounded {
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 10px;
+}
+.textInr1 {
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+}
+
+.outerSpan {
+  display: flex;
+  gap: 5px;
+  text-align: center;
+}
+
+.span {
+  padding: 4px 4px 4px 4px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(106, 43, 165, 0.39);
+}
+.spanRound {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 4px 4px 4px 4px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(137, 43, 226, 0.39);
+  font-size: 20px;
+}
+.textInr2 {
+  height: 85vh;
+  padding-top: 5px;
+}
+.textInr4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.box {
+  min-height: 100px;
+  height: auto;
+  border: 1px solid rgba(123, 60, 182, 0.39);
+  border-radius: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+.box > p:nth-child(2) {
+  font-size: 25px;
+}
+
+.box > p:nth-child(1) {
+  margin-bottom: 10px;
+}
+.recentActivity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.recentStudent,
+.CourseCompletion {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgba(123, 60, 182, 0.39);
+}
+.recentInr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.students {
+  margin-top: 10px;
+  height: 230px;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+.logOut {
+  cursor: pointer;
+}
